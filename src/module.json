@@ -1,0 +1,35 @@
+{
+  "id": "asc-session-title-suggestions",
+  "title": "Session Title Suggestions",
+  "description": "A simple module that keeps track of session title suggestions",
+  "authors": [
+    {
+    "name": "lmxsdl"
+    }
+  ],
+  "version": "0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "download": "https://gitea.ascorrea.com/asc/asc-session-title-suggestions/releases/download/0.1/src.zip",
+  "manifest":"https://gitea.ascorrea.com/asc/asc-session-title-suggestions/raw/branch/master/src/module.json",
+  "scripts": [
+    "scripts/main.js"
+  ],
+  "esmodules":[
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "_chatcommands",
+        "type": "module",
+        "manifest": "https://gitlab.com/woodentavern/foundryvtt-chat-command-lib/-/raw/master/src/module.json",
+        "compatability": {
+            "minimum": "2.0.2",
+            "verified": "2.0.2"
+          }
+      }
+    ]
+  }
+}
