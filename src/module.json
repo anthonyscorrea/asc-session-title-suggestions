@@ -1,0 +1,31 @@
+{
+  "id": "asc-session-title-suggestions",
+  "title": "Session Title Suggestions",
+  "description": "A simple module that keeps track of session title suggestions",
+  "authors": [
+    {
+    "name": "lmxsdl"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "scripts": [
+    "scripts/main.js"
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "_chatcommands",
+        "type": "module",
+        "manifest": "https://gitlab.com/woodentavern/foundryvtt-chat-command-lib/-/raw/master/src/module.json",
+        "compatability": {
+            "minimum": "2.0.2",
+            "verified": "2.0.2"
+          }
+      }
+    ]
+  }
+}
