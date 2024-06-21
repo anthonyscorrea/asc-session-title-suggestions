@@ -51,7 +51,7 @@ function registerCustomChatCommands() {
             aliases: ["/ts"],
             description: "List all titles for the most recent episode",
             icon: '<i class="fa-solid fa-podcast"></i>',
-            requiredRole: "GAMEMASTER",
+            requiredRole: "TRUSTED",
             callback: async (chat, parameters, messageData) => {
                 const newMessageData = {}
                 const suggestions = game.messages.filter(m => {
