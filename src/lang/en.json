@@ -1,6 +1,7 @@
 {
+  "SESSION_TITLE_SUGGESTIONS.INVALID_DATE": "Invalid date provided.",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_AUTOCOMPLETE_MESSAGE": "Enter your session title suggestion.",
-  "SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_COMMAND_DESCRIPTION": "List all title suggestions for the most recent session",
+  "SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_COMMAND_DESCRIPTION": "List all title suggestions for the provided date",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_COMMAND_DESCRIPTION": "Suggest a title for this session",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_FLAVOR": "suggesting a session title",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_FLAVOR": "session title suggestions"

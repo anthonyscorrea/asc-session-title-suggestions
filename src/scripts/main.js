@@ -57,17 +57,40 @@ function registerCustomChatCommands() {
                 const suggestions = game.messages.filter(m => {
                     return m.flags.session_title_suggestion
                 })
-                
-                const last_message_date = new Date(suggestions[suggestions.length-1].timestamp)
+                let selected_message_date
+                if (!parameters) {
+                    selected_message_date = new Date(suggestions[suggestions.length-1].timestamp)
+
+                } else {
+                    const epoch_date = Date.parse(parameters)
+                    if (Number.isNaN(epoch_date)){
+                        ui.notifications.error(`${game.i18n.localize("SESSION_TITLE_SUGGESTIONS.INVALID_DATE")} (${parameter})`);
+                        return;
+                    }
+                    selected_message_date = new Date(epoch_date)
+                }
                 const filtered_suggestions = suggestions.filter(m=>{
                     const message_date = new Date(m.timestamp)
-                    return message_date.toDateString() == last_message_date.toDateString()
+                    return message_date.toDateString() == selected_message_date.toDateString()
                 })
                 newMessageData.content = await renderTemplate(TEMPLATES.suggestionList.content, {messages:filtered_suggestions })
-                newMessageData.flavor = await renderTemplate(TEMPLATES.suggestionList.flavor, {date:last_message_date.toDateString()})
+                newMessageData.flavor = await renderTemplate(TEMPLATES.suggestionList.flavor, {date:selected_message_date.toDateString()})
                 return newMessageData;
             },
-            autocompleteCallback: (menu, alias, parameters) => [],
+            autocompleteCallback: (menu, alias, parameters) => {
+                const suggestions = game.messages.filter(m => {
+                    return m.flags.session_title_suggestion
+                })
+                const dates = new Set(
+                    suggestions.map(s=>new Date(s.timestamp).toDateString())
+                )
+                const entries = [...dates].map(date=>{
+                    return game.chatCommands.createCommandElement(`${alias} ${date}`, date)
+                })
+                
+                entries.length = Math.min(entries.length, menu.maxEntries);
+                return entries;
+            },
             closeOnComplete: true
         }, true);
 }
