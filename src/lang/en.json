@@ -1,4 +1,6 @@
 {
+  "SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_HINT": "Select the minimum role required to use the /titles command.",
+  "SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_NAME": "List Titles Command Required Role",
   "SESSION_TITLE_SUGGESTIONS.INVALID_DATE": "Invalid date provided.",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_AUTOCOMPLETE_MESSAGE": "Enter your session title suggestion.",
   "SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_COMMAND_DESCRIPTION": "List all title suggestions for the provided date",

@@ -51,7 +51,7 @@ function registerCustomChatCommands() {
             aliases: ["/ts"],
             description: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_COMMAND_DESCRIPTION"),
             icon: '<i class="fa-solid fa-podcast"></i>',
-            requiredRole: "TRUSTED",
+            requiredRole: game.settings.get("asc-session-title-suggestions", "titleListCommandRole"),
             callback: async (chat, parameters, messageData) => {
                 const newMessageData = {}
                 const suggestions = game.messages.filter(m => {
@@ -98,16 +98,23 @@ function registerCustomChatCommands() {
 Hooks.on("init", function() {
     //This code runs once the Foundry VTT software begins its initialization workflow
     registerClipboardCopyButton();
-    loadTemplates(flavor_template_path)
-    Object.values(TEMPLATES.suggestion).forEach((template_path)=>{
-        loadTemplates(template_path)
-    }
-    )
-    Object.values(TEMPLATES.suggestionList).forEach((template_path)=>{
-        loadTemplates(template_path)
-    }
-    )
-    
+    Object.values(TEMPLATES.suggestion).forEach((template_path)=>loadTemplates(template_path))
+    Object.values(TEMPLATES.suggestionList).forEach((template_path)=>loadTemplates(template_path))
+    game.settings.register("asc-session-title-suggestions", "titleListCommandRole", {
+        name: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_NAME"),
+        scope: "world",
+        config: true,
+        type: String,
+        default: "TRUSTED",
+        requiresReload: true,
+        choices: {
+          "PLAYER": game.i18n.localize("USER.RolePlayer"),
+          "TRUSTED": game.i18n.localize("USER.RoleTrusted"),
+          "ASSISTANT": game.i18n.localize("USER.RoleAssistant"),
+          "GAMEMASTER": game.i18n.localize("USER.RoleGamemaster")
+        },
+        hint: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_HINT")
+      });
 });
 
 Hooks.on("ready", function() {
