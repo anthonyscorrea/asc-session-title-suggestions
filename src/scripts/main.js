@@ -24,12 +24,11 @@ function registerClipboardCopyButton() {
 
 
 function registerCustomChatCommands() {
-    game.chatCommands.unregister(NAME)
     game.chatCommands.register({
         name: NAME,
         module: "_chatcommands",
         aliases: ["/t", "t/"],
-        description: "Suggest a title for this episode",
+        description: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SUGGESTION_COMMAND_DESCRIPTION"),
         icon: '<i class="fa-solid fa-podcast"></i>',
         requiredRole: "NONE",
         callback: async (chat, parameters, messageData) => {
@@ -40,16 +39,17 @@ function registerCustomChatCommands() {
             newMessageData.flags = {session_title_suggestion: titleSuggestion}
             return newMessageData;
         },
-        autocompleteCallback: (menu, alias, parameters) => [game.chatCommands.createInfoElement("Enter a message.")],
+        autocompleteCallback: (menu, alias, parameters) => [
+            game.chatCommands.createInfoElement(game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SUGGESTION_AUTOCOMPLETE_MESSAGE"))
+        ],
         closeOnComplete: true
-    });
+    }, true);
     
-    game.chatCommands.unregister(NAME+"s")
     game.chatCommands.register({
             name: NAME+"s",
             module: "_chatcommands",
             aliases: ["/ts"],
-            description: "List all titles for the most recent episode",
+            description: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SUGGESTION_LIST_COMMAND_DESCRIPTION"),
             icon: '<i class="fa-solid fa-podcast"></i>',
             requiredRole: "TRUSTED",
             callback: async (chat, parameters, messageData) => {
@@ -67,16 +67,13 @@ function registerCustomChatCommands() {
                 newMessageData.flavor = await renderTemplate(TEMPLATES.suggestionList.flavor, {date:last_message_date.toDateString()})
                 return newMessageData;
             },
-            autocompleteCallback: (menu, alias, parameters) => [game.chatCommands.createInfoElement("Enter a message.")],
+            autocompleteCallback: (menu, alias, parameters) => [],
             closeOnComplete: true
-        });
+        }, true);
 }
-
-console.log("Hello World! This code runs immediately when the file is loaded.");
 
 Hooks.on("init", function() {
     //This code runs once the Foundry VTT software begins its initialization workflow
-    registerCustomChatCommands();
     registerClipboardCopyButton();
     loadTemplates(flavor_template_path)
     Object.values(TEMPLATES.suggestion).forEach((template_path)=>{
@@ -87,8 +84,10 @@ Hooks.on("init", function() {
         loadTemplates(template_path)
     }
     )
+    
 });
 
 Hooks.on("ready", function() {
     //This code runs once core initialization is ready and game data is available.
+    registerCustomChatCommands();
 });

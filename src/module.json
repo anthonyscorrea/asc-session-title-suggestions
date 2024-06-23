@@ -12,6 +12,13 @@
     "minimum": "10",
     "verified": "11"
   },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "download": "https://gitea.ascorrea.com/asc/asc-session-title-suggestions/releases/download/0.1.2/asc-session-title-suggestions-0.1.2.zip",
   "manifest":"https://gitea.ascorrea.com/asc/asc-session-title-suggestions/raw/branch/master/src/module.json",
   "scripts": [
