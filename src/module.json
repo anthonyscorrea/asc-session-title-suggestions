@@ -7,10 +7,10 @@
     "name": "lmxsdl"
     }
   ],
-  "version": "0.2",
+  "version": "0.3",
   "compatibility": {
-    "minimum": "10",
-    "verified": "11"
+    "minimum": "11",
+    "verified": ["11","12"]
   },
   "languages": [
     {
@@ -19,7 +19,7 @@
       "path": "lang/en.json"
     }
   ],
-  "download": "https://gitea.ascorrea.com/asc/asc-session-title-suggestions/releases/download/0.2/module.zip",
+  "download": "https://gitea.ascorrea.com/asc/asc-session-title-suggestions/releases/download/0.3/module.zip",
   "manifest": "https://gitea.ascorrea.com/asc/asc-session-title-suggestions/releases/download/latest/module.json",
   "scripts": [
     "scripts/main.js"

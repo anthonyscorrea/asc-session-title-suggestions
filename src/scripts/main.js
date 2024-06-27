@@ -1,3 +1,5 @@
+
+
 const NAME = "/title"
 
 const template_path = "modules/asc-session-title-suggestions/templates"
@@ -115,6 +117,8 @@ Hooks.on("init", function() {
         },
         hint: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_HINT")
       });
+    import ('https://cdn.jsdelivr.net/npm/title-case@4.3.1/dist/index.min.js')
+      .then((module)=>{console.log('asc','loading...');Handlebars.registerHelper("titlecase", module.titleCase)})
 });
 
 Hooks.on("ready", function() {
