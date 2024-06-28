@@ -18,9 +18,9 @@
       "path": "lang/en.json"
     }
   ],
-  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.3.1/module.zip",
+  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.3.3/module.zip",
   "manifest": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/latest/download/module.json",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "scripts": [
     "scripts/main.js"
   ],
