@@ -4,9 +4,11 @@
   "description": "A simple module that keeps track of session title suggestions",
   "authors": [
     {
-    "name": "lmxsdl"
+    "name": "anthonyscorrea",
+    "url": "https://github.com/anthonyscorrea"
     }
   ],
+  "url": "https://github.com/anthonyscorrea/asc-session-title-suggestions",
   "compatibility": {
     "minimum": "11",
     "verified": "12"
@@ -18,9 +20,9 @@
       "path": "lang/en.json"
     }
   ],
-  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.5/module.zip",
+  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.5.1/module.zip",
   "manifest": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/latest/download/module.json",
-  "version": "0.5",
+  "version": "0.5.1",
   "scripts": [
     "scripts/main.js"
   ],
