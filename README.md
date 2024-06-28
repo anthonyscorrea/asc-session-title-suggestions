@@ -15,11 +15,9 @@ This module requires the Chat Commander module to be installed and enabled. You 
 
 ## Installation
 
-1. Open FoundryVTT and go to the "Add-on Modules" tab in the "Configuration and Setup" menu.
-2. Click on "Install Module".
-3. In the "Manifest URL" field, paste the following URL: `[your-module-manifest-url]`.
-4. Click "Install" and wait for the installation to complete.
-5. Enable the module in your game settings.
+1. In the "Manifest URL" field, paste the following URL: `https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/latest/download/module.json`.
+2. Click "Install" and wait for the installation to complete.
+3. Enable the module in your game settings.
 
 ## Usage
 
