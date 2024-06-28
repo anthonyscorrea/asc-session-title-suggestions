@@ -1,5 +1,3 @@
-
-
 const NAME = "/title"
 
 const template_path = "modules/asc-session-title-suggestions/templates"
