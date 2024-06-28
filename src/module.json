@@ -9,7 +9,7 @@
   ],
   "compatibility": {
     "minimum": "11",
-    "verified": ["11","12"]
+    "verified": "12"
   },
   "languages": [
     {
@@ -18,9 +18,9 @@
       "path": "lang/en.json"
     }
   ],
-  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.3.3/module.zip",
+  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.5/module.zip",
   "manifest": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/latest/download/module.json",
-  "version": "0.3.3",
+  "version": "0.5",
   "scripts": [
     "scripts/main.js"
   ],
