@@ -15,7 +15,10 @@ const TEMPLATES = {
 
 function registerClipboardCopyButton() {
     copyToClipboardListener = (event) => {
-        const text=event.target.dataset.clipboardText;
+        let text=event.target.dataset.clipboardText;
+        if (text.includes(';;;')){
+            text = text.split(';;;').join('\n')
+        }
         console.log(`Session Title Suggestions | Copying "${text}" to clipboard`);
         navigator.clipboard.writeText(text)
       }
