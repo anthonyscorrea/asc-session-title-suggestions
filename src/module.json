@@ -20,11 +20,11 @@
       "path": "lang/en.json"
     }
   ],
-  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.5.2/module.zip",
+  "download": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/download/0.5.3/module.zip",
   "manifest": "https://github.com/anthonyscorrea/asc-session-title-suggestions/releases/latest/download/module.json",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "scripts": [
-    "scripts/main.js"
+    "scripts/asc-session-title-suggestions.js"
   ],
   "esmodules":[
   ],

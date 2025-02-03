@@ -101,8 +101,10 @@ function registerCustomChatCommands() {
 Hooks.on("init", function() {
     //This code runs once the Foundry VTT software begins its initialization workflow
     registerClipboardCopyButton();
-    Object.values(TEMPLATES.suggestion).forEach((template_path)=>loadTemplates(template_path))
-    Object.values(TEMPLATES.suggestionList).forEach((template_path)=>loadTemplates(template_path))
+    loadTemplates([
+        ...Object.values(TEMPLATES.suggestion),
+        ...Object.values(TEMPLATES.suggestionList)
+    ])
     game.settings.register("asc-session-title-suggestions", "titleListCommandRole", {
         name: game.i18n.localize("SESSION_TITLE_SUGGESTIONS.SETTING_ROLE_NAME"),
         scope: "world",
